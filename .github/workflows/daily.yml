@@ -1,0 +1,76 @@
+# The daily job: fetch, diff, alert, commit state, deploy the dashboard.
+#
+# Commits are pushed with the built-in GITHUB_TOKEN, so they don't start other
+# workflows. This workflow deploys Pages itself, even when the run fails, so the
+# dashboard shows the failure. A failed run never overwrites the last good snapshot.
+
+name: Daily price run
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: tracker-state
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Run tracker
+        id: run
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          status=0
+          python -m tracker run || status=$?
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Commit state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state
+          if ! git diff --cached --quiet; then
+            git commit -m "tracker: run $(date -u +%F) [status ${{ steps.run.outputs.status }}]"
+            git pull --rebase --quiet
+            git push
+          fi
+
+      - name: Build dashboard
+        run: python -m tracker build-site --out public
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+      - name: Fail the job if the run failed
+        if: steps.run.outputs.status != '0'
+        run: exit ${{ steps.run.outputs.status }}
+
+  deploy:
+    needs: track
+    # Deploy even after a failed run so the dashboard reports it.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,26 @@
+# Alerts when there has been no successful daily run for heartbeat_max_age_hours (48).
+
+name: Heartbeat
+
+on:
+  schedule:
+    - cron: "0 19 * * *" # 19:00 UTC, twelve hours after the daily run
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Check last successful run
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python -m tracker heartbeat

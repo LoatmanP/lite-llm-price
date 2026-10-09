@@ -944,7 +944,7 @@ function renderFooter() {
   $("#footer").innerHTML = `
     <div>
       <h4>How it works</h4>
-      <p>A daily scheduled pipeline fetches the LiteLLM price file, checks that it still holds at least 80% of the last good run's Bedrock entries, keeps Bedrock chat models on the <span class="mono">${esc(cfg.prefix)}</span> prefix, and diffs them against the last good snapshot. New models are compared with a baseline; every event is alerted and logged.</p>
+      <p>A daily scheduled job fetches the LiteLLM price file, checks that it still holds at least 80% of the last good run's Bedrock entries, keeps Bedrock chat models on the <span class="mono">${esc(cfg.prefix)}</span> prefix, and diffs them against the last good snapshot. New models are compared with a baseline; every event is alerted and logged.</p>
       <p>Each price is then checked against AWS's public Price List. Where AWS lists the model, the AWS price is reported and marked <span class="vbadge ok">✓ AWS</span> (or <span class="vbadge warn">≠ AWS</span> when LiteLLM disagrees). Otherwise it is marked <span class="vbadge ll">LiteLLM</span>.</p>
       <p>A failed run never overwrites the last good snapshot.</p>
     </div>

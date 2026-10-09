@@ -1,6 +1,6 @@
 # Bedrock Model Price Tracker
 
-A daily job that tells us when a new text model shows up on Amazon Bedrock, and how its on-demand input and output token prices compare with the models we use today. The results are published as a dashboard on GitLab Pages.
+A daily job that tells us when a new text model shows up on Amazon Bedrock, and how its on-demand input and output token prices compare with the models we use today. The results are published as a dashboard on GitHub Pages.
 
 This implements `Bedrock Model Price Tracker Spec.pdf`.
 
@@ -17,7 +17,7 @@ This implements `Bedrock Model Price Tracker Spec.pdf`.
 | `config/aws_names.json` | Hand-edited map from Bedrock model ID to the model's name in the AWS Price List. |
 | `state/` | Tracker state, committed by the scheduled job. `snapshots/YYYY-MM-DD.csv`, `events.csv`, `meta.json`. |
 | `site/` | The static dashboard (plain HTML/CSS/JS, no build step). |
-| `.gitlab-ci.yml` | Tests, the daily run, the heartbeat and the Pages deploy. |
+| `.github/workflows/` | `daily.yml` (the daily run and Pages deploy), `heartbeat.yml`, and `ci.yml` (tests, and a Pages redeploy on pushes to `main`). |
 
 Only the Python standard library is needed. `boto3` is needed only if you turn on the `ListFoundationModels` step.
 
@@ -43,19 +43,24 @@ python3 -m tracker backfill --days 90 --force   # wipes state/ first
 
 It uses the GitHub API to list commits (60 requests/hour unauthenticated; set `GITHUB_TOKEN` to raise that). Without a backfill, the first run saves a snapshot and sends no alerts, as the spec says.
 
-## Set up on GitLab
+## Set up on GitHub
 
-1. Push this repository to a GitLab project.
-2. **Create a push token.** Under Settings → Access tokens, create a project access token with the `write_repository` scope. Give it a role that can push to the default branch: Maintainer if the branch is protected. The daily job uses it to commit `state/` back, with `-o ci.skip` so the push doesn't start another pipeline.
-3. **Add CI/CD variables** under Settings → CI/CD → Variables. Mark both masked.
-   - `TRACKER_PUSH_TOKEN`: the token from step 2.
-   - `SLACK_WEBHOOK_URL`: a Slack incoming webhook. Leave it unset to write alerts to the job log only.
-4. **Create two pipeline schedules** on the default branch, under Build → Pipeline schedules:
-   - Daily run: for example `0 7 * * *` UTC, with variable `TRACKER_TASK=daily`.
-   - Heartbeat: for example `0 19 * * *` UTC, with variable `TRACKER_TASK=heartbeat`.
-5. Run the daily schedule once by hand (the ▶ button) to deploy Pages. The URL appears under Deploy → Pages. Set Pages access control there if the dashboard should be internal only.
+1. Push this repository to GitHub.
+2. **Turn on Pages from Actions.** Under Settings → Pages → Build and deployment, set Source to **GitHub Actions**.
+3. **Let workflows push.** Under Settings → Actions → General → Workflow permissions, choose **Read and write permissions**. The daily job commits `state/` back with the built-in `GITHUB_TOKEN`; no personal token is needed.
+4. **Add the Slack webhook (optional).** Under Settings → Secrets and variables → Actions → New repository secret, add `SLACK_WEBHOOK_URL`. Without it, alerts only appear in the job log.
+5. **Run it once.** Under Actions → Daily price run → Run workflow. Check that the run log ends with an `AWS price check (ok)` line, that a `tracker: run YYYY-MM-DD` commit appears on `main`, and that the `deploy` job prints the dashboard URL.
 
-The scheduled pipeline runs `track` and then `pages`. `pages` runs even when `track` fails, so a failed run shows up on the dashboard as "Last run failed". A failed run never overwrites the last good snapshot. Pushes to the default branch run the tests and redeploy Pages from the committed state.
+The schedules are in the workflow files: the daily run at 07:00 UTC and the heartbeat at 19:00 UTC. Edit the `cron` lines to change them. GitHub may start scheduled runs some minutes late.
+
+The daily workflow deploys Pages even when the run fails, so a failed run shows on the dashboard as "Last run failed". A failed run never overwrites the last good snapshot. Commits made by the workflow don't start other workflows; pushes you make to `main` run the tests and redeploy Pages from the committed state.
+
+### Things to check on GitHub
+
+- **Who can see the dashboard.** On a public repository, or a private one on Pro or Team plans, the Pages site is public. Only GitHub Enterprise Cloud can restrict a Pages site to organization members. The dashboard shows only list prices and our watchlist, but decide whether that's OK before deploying.
+- **Private repositories.** GitHub Pages needs a paid plan (Pro, Team or Enterprise) for private repositories.
+- **Branch protection.** If `main` requires pull requests or reviews, the daily commit will be rejected. Allow GitHub Actions to bypass the rule, or move state to a separate branch.
+- **Inactive repositories.** GitHub disables scheduled workflows in public repositories after 60 days without activity. The daily state commit normally counts as activity, but the heartbeat is there to catch it if runs stop.
 
 ## How it follows the spec
 
@@ -115,7 +120,7 @@ These have placeholder answers in `config/tracker.json`. Confirm or change them.
 | Model ID prefix | `us.`, as the spec assumes |
 | Watchlist and baselines | Placeholder: Sonnet 4.6, Opus 4.6, Haiku 4.5, GPT-5.4, Nova Pro, Llama 3.3 70B. Family patterns for Sonnet, Opus and Haiku. **Replace these with the models we actually use.** |
 | Where alerts go | Slack webhook, via a CI/CD variable |
-| Where it runs and stores state | GitLab scheduled pipeline committing CSVs to this repo |
+| Where it runs and stores state | GitHub Actions workflow committing CSVs to this repo (the spec's first option) |
 | `ListFoundationModels` in v1 | Off (`list_foundation_models.enabled: false`). Turning it on needs `boto3` in the job image and AWS credentials in CI. |
 | Org policy on fetching from GitHub | Not yet confirmed. The job now also fetches `pricing.us-east-1.amazonaws.com`. |
 
