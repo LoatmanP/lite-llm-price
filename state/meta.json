@@ -1,0 +1,780 @@
+{
+  "aws_check": {
+    "checked_at": "2026-10-09T19:40:04+00:00",
+    "conflicts": 0,
+    "error": null,
+    "litellm_only": 9,
+    "mismatch": 0,
+    "published": {
+      "us-east-1 AmazonBedrock": "2026-10-06T14:47:26Z",
+      "us-east-1 AmazonBedrockFoundationModels": "2026-10-08T23:56:37Z",
+      "us-east-2 AmazonBedrock": "2026-10-06T14:47:26Z",
+      "us-east-2 AmazonBedrockFoundationModels": "2026-10-08T23:56:37Z",
+      "us-west-2 AmazonBedrock": "2026-10-06T14:47:26Z",
+      "us-west-2 AmazonBedrockFoundationModels": "2026-10-08T23:56:37Z"
+    },
+    "regions": [
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "status": "ok",
+    "verified": 49
+  },
+  "aws_mismatches": {},
+  "first_run_date": "2026-07-11",
+  "last_bedrock_entry_count": 527,
+  "last_run_at": "2026-10-09T19:40:04+00:00",
+  "last_status": "ok",
+  "last_success_at": "2026-10-09T19:40:04+00:00",
+  "last_success_date": "2026-10-09",
+  "last_summary": {
+    "date": "2026-10-09",
+    "first_run": false,
+    "models": 58,
+    "new_model": 0,
+    "price_change": 0,
+    "removed": 0,
+    "skipped_no_price": 2
+  },
+  "missing_watchlist": [],
+  "price_pending": [],
+  "runs": [
+    {
+      "at": "2026-10-09T18:54:03+00:00",
+      "date": "2026-07-11",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:03+00:00",
+      "date": "2026-07-12",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:03+00:00",
+      "date": "2026-07-13",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:03+00:00",
+      "date": "2026-07-14",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:03+00:00",
+      "date": "2026-07-15",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:04+00:00",
+      "date": "2026-07-16",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:04+00:00",
+      "date": "2026-07-17",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:04+00:00",
+      "date": "2026-07-18",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:04+00:00",
+      "date": "2026-07-19",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:04+00:00",
+      "date": "2026-07-20",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:04+00:00",
+      "date": "2026-07-21",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:05+00:00",
+      "date": "2026-07-22",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:05+00:00",
+      "date": "2026-07-23",
+      "events": 0,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:12+00:00",
+      "date": "2026-07-24",
+      "events": 1,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:12+00:00",
+      "date": "2026-07-25",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:12+00:00",
+      "date": "2026-07-26",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:12+00:00",
+      "date": "2026-07-27",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:12+00:00",
+      "date": "2026-07-28",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:13+00:00",
+      "date": "2026-07-29",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:13+00:00",
+      "date": "2026-07-30",
+      "events": 1,
+      "models": 40,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:13+00:00",
+      "date": "2026-07-31",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:13+00:00",
+      "date": "2026-08-01",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-02",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-03",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-04",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-05",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-06",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-07",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:14+00:00",
+      "date": "2026-08-08",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:15+00:00",
+      "date": "2026-08-09",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:15+00:00",
+      "date": "2026-08-10",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:15+00:00",
+      "date": "2026-08-11",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:15+00:00",
+      "date": "2026-08-12",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:16+00:00",
+      "date": "2026-08-13",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:16+00:00",
+      "date": "2026-08-14",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:16+00:00",
+      "date": "2026-08-15",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:17+00:00",
+      "date": "2026-08-16",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:17+00:00",
+      "date": "2026-08-17",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:17+00:00",
+      "date": "2026-08-18",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:17+00:00",
+      "date": "2026-08-19",
+      "events": 0,
+      "models": 41,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:18+00:00",
+      "date": "2026-08-20",
+      "events": 1,
+      "models": 42,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:18+00:00",
+      "date": "2026-08-21",
+      "events": 0,
+      "models": 42,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:18+00:00",
+      "date": "2026-08-22",
+      "events": 3,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:18+00:00",
+      "date": "2026-08-23",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:19+00:00",
+      "date": "2026-08-24",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:19+00:00",
+      "date": "2026-08-25",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:19+00:00",
+      "date": "2026-08-26",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:19+00:00",
+      "date": "2026-08-27",
+      "events": 1,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:20+00:00",
+      "date": "2026-08-28",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:20+00:00",
+      "date": "2026-08-29",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:20+00:00",
+      "date": "2026-08-30",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:20+00:00",
+      "date": "2026-08-31",
+      "events": 0,
+      "models": 45,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:21+00:00",
+      "date": "2026-09-01",
+      "events": 1,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:21+00:00",
+      "date": "2026-09-02",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:21+00:00",
+      "date": "2026-09-03",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:22+00:00",
+      "date": "2026-09-04",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:22+00:00",
+      "date": "2026-09-05",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:22+00:00",
+      "date": "2026-09-06",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:23+00:00",
+      "date": "2026-09-07",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:23+00:00",
+      "date": "2026-09-08",
+      "events": 0,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:23+00:00",
+      "date": "2026-09-09",
+      "events": 1,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:23+00:00",
+      "date": "2026-09-10",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:23+00:00",
+      "date": "2026-09-11",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:24+00:00",
+      "date": "2026-09-12",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:24+00:00",
+      "date": "2026-09-13",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:24+00:00",
+      "date": "2026-09-14",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:24+00:00",
+      "date": "2026-09-15",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:25+00:00",
+      "date": "2026-09-16",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:25+00:00",
+      "date": "2026-09-17",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:25+00:00",
+      "date": "2026-09-18",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:26+00:00",
+      "date": "2026-09-19",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:26+00:00",
+      "date": "2026-09-20",
+      "events": 0,
+      "models": 47,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:26+00:00",
+      "date": "2026-09-21",
+      "events": 1,
+      "models": 48,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:27+00:00",
+      "date": "2026-09-22",
+      "events": 4,
+      "models": 46,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:27+00:00",
+      "date": "2026-09-23",
+      "events": 2,
+      "models": 48,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:27+00:00",
+      "date": "2026-09-24",
+      "events": 5,
+      "models": 53,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:28+00:00",
+      "date": "2026-09-25",
+      "events": 0,
+      "models": 53,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:28+00:00",
+      "date": "2026-09-26",
+      "events": 0,
+      "models": 53,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:28+00:00",
+      "date": "2026-09-27",
+      "events": 0,
+      "models": 53,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:28+00:00",
+      "date": "2026-09-28",
+      "events": 6,
+      "models": 55,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:28+00:00",
+      "date": "2026-09-29",
+      "events": 1,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:29+00:00",
+      "date": "2026-09-30",
+      "events": 0,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:29+00:00",
+      "date": "2026-10-01",
+      "events": 0,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:29+00:00",
+      "date": "2026-10-02",
+      "events": 0,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:30+00:00",
+      "date": "2026-10-03",
+      "events": 1,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:30+00:00",
+      "date": "2026-10-04",
+      "events": 0,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:30+00:00",
+      "date": "2026-10-05",
+      "events": 0,
+      "models": 56,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:30+00:00",
+      "date": "2026-10-06",
+      "events": 1,
+      "models": 57,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:31+00:00",
+      "date": "2026-10-07",
+      "events": 1,
+      "models": 58,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:31+00:00",
+      "date": "2026-10-08",
+      "events": 0,
+      "models": 58,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T18:54:31+00:00",
+      "date": "2026-10-09",
+      "events": 0,
+      "models": 58,
+      "source": "backfill",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-09T19:40:04+00:00",
+      "date": "2026-10-09",
+      "events": 0,
+      "models": 58,
+      "source": "scheduled",
+      "status": "ok"
+    }
+  ]
+}

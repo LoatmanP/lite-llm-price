@@ -1,0 +1,36 @@
+{
+  "source_url": "https://raw.githubusercontent.com/BerriAI/litellm/main/model_prices_and_context_window.json",
+  "prefix": "us.",
+  "watchlist": [
+    "us.anthropic.claude-sonnet-4-6",
+    "us.anthropic.claude-opus-4-6-v1",
+    "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "us.openai.gpt-5.4",
+    "us.amazon.nova-pro-v1:0",
+    "us.meta.llama3-3-70b-instruct-v1:0"
+  ],
+  "baselines": {
+    "anthropic.claude-sonnet-*": "us.anthropic.claude-sonnet-4-6",
+    "anthropic.claude-opus-*": "us.anthropic.claude-opus-4-6-v1",
+    "anthropic.claude-haiku-*": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  },
+  "alert_target": {
+    "type": "slack",
+    "webhook_env": "SLACK_WEBHOOK_URL"
+  },
+  "validation_min_ratio": 0.8,
+  "heartbeat_max_age_hours": 48,
+  "list_foundation_models": {
+    "enabled": false,
+    "region": "us-east-1"
+  },
+  "aws_price_check": {
+    "enabled": true,
+    "regions": [
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "names_file": "config/aws_names.json"
+  }
+}

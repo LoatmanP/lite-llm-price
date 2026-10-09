@@ -1,0 +1,79 @@
+# Bedrock model price tracker
+#
+# Schedules (CI/CD > Pipeline schedules), both on the default branch:
+#   daily      TRACKER_TASK=daily      e.g. "0 7 * * *"   fetch, diff, alert, commit state, deploy Pages
+#   heartbeat  TRACKER_TASK=heartbeat  e.g. "0 19 * * *"  alert if no successful run in 48h
+#
+# CI/CD variables (masked):
+#   TRACKER_PUSH_TOKEN  project access token, write_repository, allowed to push to the default branch
+#   SLACK_WEBHOOK_URL   Slack incoming webhook; leave unset to log alerts in the job output only
+#
+# Pushes to the default branch rebuild Pages from the committed state.
+
+stages: [test, track, deploy]
+
+default:
+  image: python:3.12-slim
+
+.daily: &daily
+  - if: $CI_PIPELINE_SOURCE =~ /^(schedule|web|api|trigger)$/ && $TRACKER_TASK == "daily"
+
+test:
+  stage: test
+  script:
+    - python -m unittest discover -s tests -t . -v
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $TRACKER_TASK == null
+
+track:
+  stage: track
+  image: python:3.12  # full image, for git
+  rules: *daily
+  script:
+    # Work on the tip of the default branch so the state commit fast-forwards.
+    - git fetch --quiet origin "$CI_DEFAULT_BRANCH"
+    - git checkout --quiet -B "$CI_DEFAULT_BRANCH" "origin/$CI_DEFAULT_BRANCH"
+    - status=0; python -m tracker run || status=$?
+    # Commit whatever the run wrote. A failed run only updates meta.json (never the snapshot),
+    # so the dashboard can show the failure.
+    - git config user.name "bedrock-price-tracker"
+    - git config user.email "bedrock-price-tracker@noreply.${CI_SERVER_HOST}"
+    - git add state
+    - |
+      if ! git diff --cached --quiet; then
+        git commit --quiet -m "tracker: run $(date -u +%F) [status ${status}]"
+        git push --quiet -o ci.skip \
+          "${CI_SERVER_PROTOCOL}://tracker:${TRACKER_PUSH_TOKEN}@${CI_SERVER_HOST}:${CI_SERVER_PORT}/${CI_PROJECT_PATH}.git" \
+          "HEAD:${CI_DEFAULT_BRANCH}"
+      fi
+    - exit $status
+  artifacts:
+    when: always
+    paths: [state/]
+    expire_in: 7 days
+
+heartbeat:
+  stage: track
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" && $TRACKER_TASK == "heartbeat"
+  script:
+    - python -m tracker heartbeat
+
+pages:
+  stage: deploy
+  rules:
+    # After the daily run, deploy even if the run failed so the status shows on the page.
+    - if: $CI_PIPELINE_SOURCE =~ /^(schedule|web|api|trigger)$/ && $TRACKER_TASK == "daily"
+      when: always
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $TRACKER_TASK == null
+  needs:
+    - job: track
+      optional: true
+      artifacts: true
+    - job: test
+      optional: true
+  script:
+    - python -m tracker build-site --out public
+  artifacts:
+    paths: [public]
