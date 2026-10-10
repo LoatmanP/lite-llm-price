@@ -1,6 +1,6 @@
 {
   "aws_check": {
-    "checked_at": "2026-10-09T20:01:53+00:00",
+    "checked_at": "2026-10-10T13:28:27+00:00",
     "conflicts": 0,
     "error": null,
     "litellm_only": 9,
@@ -24,12 +24,12 @@
   "aws_mismatches": {},
   "first_run_date": "2026-07-11",
   "last_bedrock_entry_count": 527,
-  "last_run_at": "2026-10-09T20:01:53+00:00",
+  "last_run_at": "2026-10-10T13:28:27+00:00",
   "last_status": "ok",
-  "last_success_at": "2026-10-09T20:01:53+00:00",
-  "last_success_date": "2026-10-09",
+  "last_success_at": "2026-10-10T13:28:27+00:00",
+  "last_success_date": "2026-10-10",
   "last_summary": {
-    "date": "2026-10-09",
+    "date": "2026-10-10",
     "first_run": false,
     "models": 58,
     "new_model": 0,
@@ -779,6 +779,14 @@
     {
       "at": "2026-10-09T20:01:53+00:00",
       "date": "2026-10-09",
+      "events": 0,
+      "models": 58,
+      "source": "scheduled",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-10T13:28:27+00:00",
+      "date": "2026-10-10",
       "events": 0,
       "models": 58,
       "source": "scheduled",
