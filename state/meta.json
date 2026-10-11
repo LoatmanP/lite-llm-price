@@ -1,16 +1,16 @@
 {
   "aws_check": {
-    "checked_at": "2026-10-10T13:28:27+00:00",
+    "checked_at": "2026-10-11T13:53:04+00:00",
     "conflicts": 0,
     "error": null,
     "litellm_only": 9,
     "mismatch": 0,
     "published": {
-      "us-east-1 AmazonBedrock": "2026-10-06T14:47:26Z",
+      "us-east-1 AmazonBedrock": "2026-10-10T18:22:42Z",
       "us-east-1 AmazonBedrockFoundationModels": "2026-10-08T23:56:37Z",
-      "us-east-2 AmazonBedrock": "2026-10-06T14:47:26Z",
+      "us-east-2 AmazonBedrock": "2026-10-10T18:22:42Z",
       "us-east-2 AmazonBedrockFoundationModels": "2026-10-08T23:56:37Z",
-      "us-west-2 AmazonBedrock": "2026-10-06T14:47:26Z",
+      "us-west-2 AmazonBedrock": "2026-10-10T18:22:42Z",
       "us-west-2 AmazonBedrockFoundationModels": "2026-10-08T23:56:37Z"
     },
     "regions": [
@@ -23,13 +23,13 @@
   },
   "aws_mismatches": {},
   "first_run_date": "2026-07-11",
-  "last_bedrock_entry_count": 527,
-  "last_run_at": "2026-10-10T13:28:27+00:00",
+  "last_bedrock_entry_count": 528,
+  "last_run_at": "2026-10-11T13:53:04+00:00",
   "last_status": "ok",
-  "last_success_at": "2026-10-10T13:28:27+00:00",
-  "last_success_date": "2026-10-10",
+  "last_success_at": "2026-10-11T13:53:04+00:00",
+  "last_success_date": "2026-10-11",
   "last_summary": {
-    "date": "2026-10-10",
+    "date": "2026-10-11",
     "first_run": false,
     "models": 58,
     "new_model": 0,
@@ -787,6 +787,14 @@
     {
       "at": "2026-10-10T13:28:27+00:00",
       "date": "2026-10-10",
+      "events": 0,
+      "models": 58,
+      "source": "scheduled",
+      "status": "ok"
+    },
+    {
+      "at": "2026-10-11T13:53:04+00:00",
+      "date": "2026-10-11",
       "events": 0,
       "models": 58,
       "source": "scheduled",
