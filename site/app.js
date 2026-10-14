@@ -167,7 +167,6 @@ async function boot() {
   if (data.vendors.some((v) => v.id === params.get("vendor"))) S.vendor = params.get("vendor");
 
   renderStatus();
-  renderTicker();
   renderSpotlight();
   renderTiles();
   renderHealth();
@@ -201,7 +200,7 @@ function renderFiltered() {
   renderRegistry();
 }
 
-// ------------------------------------------------------------------ status + ticker
+// ------------------------------------------------------------------ status
 
 function runState() {
   const m = S.data.meta;
@@ -220,18 +219,6 @@ function renderStatus() {
     <span class="chip">Synced <b>${ago(m.last_success_at)}</b></span>
     <span class="chip">Prefix <b>${esc(S.data.config.prefix || "bare")}</b></span>
     <span class="chip">${S.data.models.length} <b>models</b></span>`;
-}
-
-function renderTicker() {
-  const items = [...S.data.models]
-    .sort((a, b) => (b.first_seen || "").localeCompare(a.first_seen || "") || a.name.localeCompare(b.name))
-    .map((m) => {
-      const c = comparison(m);
-      return `<span class="tick" data-model="${esc(m.id)}">${sigil(m, 18)}<span class="nm">${esc(m.name)}</span>
-        <span>${fmtUsd(m.input)} / ${fmtUsd(m.output)}</span>${c.inp != null ? delta(c.inp) : ""}</span>`;
-    })
-    .join("");
-  $("#ticker").innerHTML = `<div class="ticker-track">${items}<span aria-hidden="true" style="display:contents">${items}</span></div>`;
 }
 
 // ------------------------------------------------------------------ spotlight
@@ -1025,7 +1012,7 @@ function wireGlobal() {
     if (ev.target.id === "q") { S.q = ev.target.value.trim(); renderFiltered(); }
   });
   $("#deck").addEventListener("change", (ev) => {
-    if (ev.target.id === "baseline") { S.baseline = ev.target.value; renderFiltered(); renderTicker(); }
+    if (ev.target.id === "baseline") { S.baseline = ev.target.value; renderFiltered(); }
     if (ev.target.id === "watchOnly") { S.watchOnly = ev.target.checked; renderFiltered(); }
     if (ev.target.id === "awsOnly") { S.awsOnly = ev.target.checked; renderFiltered(); }
   });
