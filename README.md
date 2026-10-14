@@ -51,7 +51,7 @@ It uses the GitHub API to list commits (60 requests/hour unauthenticated; set `G
 4. **Add the Slack webhook (optional).** Under Settings → Secrets and variables → Actions → New repository secret, add `SLACK_WEBHOOK_URL`. Without it, alerts only appear in the job log.
 5. **Run it once.** Under Actions → Daily price run → Run workflow. Check that the run log ends with an `AWS price check (ok)` line, that a `tracker: run YYYY-MM-DD` commit appears on `main`, and that the `deploy` job prints the dashboard URL.
 
-The schedules are in the workflow files: the daily run at 07:00 UTC and the heartbeat at 19:00 UTC. Edit the `cron` lines to change them. GitHub may start scheduled runs some minutes late.
+The schedules are in the workflow files: the daily run at 07:00 UTC and the heartbeat at 19:00 UTC. Edit the `cron` lines to change them. GitHub queues scheduled runs when it's busy, so they can start hours late: in the first week, the 07:00 run started between about 12:45 and 16:40 UTC. The heartbeat's 48-hour window allows for this.
 
 The daily workflow deploys Pages even when the run fails, so a failed run shows on the dashboard as "Last run failed". A failed run never overwrites the last good snapshot. Commits made by the workflow don't start other workflows; pushes you make to `main` run the tests and redeploy Pages from the committed state.
 
