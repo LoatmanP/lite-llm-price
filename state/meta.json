@@ -1,6 +1,6 @@
 {
   "aws_check": {
-    "checked_at": "2026-11-01T14:10:24+00:00",
+    "checked_at": "2026-11-02T16:56:44+00:00",
     "conflicts": 0,
     "error": null,
     "litellm_only": 10,
@@ -8,9 +8,9 @@
     "published": {
       "us-east-1 AmazonBedrock": "2026-10-30T16:04:56Z",
       "us-east-1 AmazonBedrockFoundationModels": "2026-10-12T08:40:08Z",
-      "us-east-2 AmazonBedrock": "2026-10-30T16:04:56Z",
+      "us-east-2 AmazonBedrock": "2026-11-02T16:50:15Z",
       "us-east-2 AmazonBedrockFoundationModels": "2026-10-12T08:40:08Z",
-      "us-west-2 AmazonBedrock": "2026-10-30T16:04:56Z",
+      "us-west-2 AmazonBedrock": "2026-11-02T16:50:15Z",
       "us-west-2 AmazonBedrockFoundationModels": "2026-10-12T08:40:08Z"
     },
     "regions": [
@@ -24,12 +24,12 @@
   "aws_mismatches": {},
   "first_run_date": "2026-07-11",
   "last_bedrock_entry_count": 564,
-  "last_run_at": "2026-11-01T14:10:24+00:00",
+  "last_run_at": "2026-11-02T16:56:44+00:00",
   "last_status": "ok",
-  "last_success_at": "2026-11-01T14:10:24+00:00",
-  "last_success_date": "2026-11-01",
+  "last_success_at": "2026-11-02T16:56:44+00:00",
+  "last_success_date": "2026-11-02",
   "last_summary": {
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "first_run": false,
     "models": 59,
     "new_model": 0,
@@ -963,6 +963,14 @@
     {
       "at": "2026-11-01T14:10:24+00:00",
       "date": "2026-11-01",
+      "events": 0,
+      "models": 59,
+      "source": "scheduled",
+      "status": "ok"
+    },
+    {
+      "at": "2026-11-02T16:56:44+00:00",
+      "date": "2026-11-02",
       "events": 0,
       "models": 59,
       "source": "scheduled",
