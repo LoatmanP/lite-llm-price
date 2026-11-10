@@ -32,3 +32,5 @@ event_date,event_type,model_id,baseline_model_id,input_per_1m_usd,output_per_1m_
 2026-10-07,new_model,us.anthropic.claude-haiku-5-5,us.anthropic.claude-haiku-4-5-20251001-v1:0,0.11,0.55,-90,-90,,,litellm
 2026-10-27,new_model,us.openai.gpt-6.1-terra,us.openai.gpt-5.4,1.1,5.5,-60,-66.7,,,litellm
 2026-11-07,new_model,us.moonshotai.kimi-k3.1,,4.4,22,,,,,litellm
+2026-11-10,new_model,us.anthropic.claude-fable-5-2,us.anthropic.claude-opus-4-6-v1,8.8,44,60,60,,,litellm
+2026-11-10,new_model,us.anthropic.claude-mythos-5-2,us.anthropic.claude-opus-4-6-v1,8.8,44,60,60,,,litellm
