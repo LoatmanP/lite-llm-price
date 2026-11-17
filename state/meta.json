@@ -1,9 +1,9 @@
 {
   "aws_check": {
-    "checked_at": "2026-11-16T16:53:34+00:00",
+    "checked_at": "2026-11-17T16:47:02+00:00",
     "conflicts": 0,
     "error": null,
-    "litellm_only": 13,
+    "litellm_only": 15,
     "mismatch": 0,
     "published": {
       "us-east-1 AmazonBedrock": "2026-11-11T01:30:37Z",
@@ -23,16 +23,16 @@
   },
   "aws_mismatches": {},
   "first_run_date": "2026-07-11",
-  "last_bedrock_entry_count": 592,
-  "last_run_at": "2026-11-16T16:53:34+00:00",
+  "last_bedrock_entry_count": 603,
+  "last_run_at": "2026-11-17T16:47:02+00:00",
   "last_status": "ok",
-  "last_success_at": "2026-11-16T16:53:34+00:00",
-  "last_success_date": "2026-11-16",
+  "last_success_at": "2026-11-17T16:47:02+00:00",
+  "last_success_date": "2026-11-17",
   "last_summary": {
-    "date": "2026-11-16",
+    "date": "2026-11-17",
     "first_run": false,
-    "models": 62,
-    "new_model": 0,
+    "models": 64,
+    "new_model": 2,
     "price_change": 0,
     "removed": 0,
     "skipped_no_price": 2
@@ -40,14 +40,6 @@
   "missing_watchlist": [],
   "price_pending": [],
   "runs": [
-    {
-      "at": "2026-10-09T18:54:05+00:00",
-      "date": "2026-07-22",
-      "events": 0,
-      "models": 40,
-      "source": "backfill",
-      "status": "ok"
-    },
     {
       "at": "2026-10-09T18:54:05+00:00",
       "date": "2026-07-23",
@@ -997,6 +989,14 @@
       "date": "2026-11-16",
       "events": 0,
       "models": 62,
+      "source": "scheduled",
+      "status": "ok"
+    },
+    {
+      "at": "2026-11-17T16:47:02+00:00",
+      "date": "2026-11-17",
+      "events": 2,
+      "models": 64,
       "source": "scheduled",
       "status": "ok"
     }
