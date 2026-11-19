@@ -1,17 +1,17 @@
 {
   "aws_check": {
-    "checked_at": "2026-11-18T16:18:53+00:00",
+    "checked_at": "2026-11-19T16:27:44+00:00",
     "conflicts": 0,
     "error": null,
     "litellm_only": 17,
     "mismatch": 0,
     "published": {
       "us-east-1 AmazonBedrock": "2026-11-11T01:30:37Z",
-      "us-east-1 AmazonBedrockFoundationModels": "2026-11-09T22:43:12Z",
+      "us-east-1 AmazonBedrockFoundationModels": "2026-11-19T13:30:17Z",
       "us-east-2 AmazonBedrock": "2026-11-11T01:30:37Z",
-      "us-east-2 AmazonBedrockFoundationModels": "2026-11-09T22:43:12Z",
+      "us-east-2 AmazonBedrockFoundationModels": "2026-11-19T13:30:17Z",
       "us-west-2 AmazonBedrock": "2026-11-11T01:30:37Z",
-      "us-west-2 AmazonBedrockFoundationModels": "2026-11-09T22:43:12Z"
+      "us-west-2 AmazonBedrockFoundationModels": "2026-11-19T13:30:17Z"
     },
     "regions": [
       "us-east-1",
@@ -24,15 +24,15 @@
   "aws_mismatches": {},
   "first_run_date": "2026-07-11",
   "last_bedrock_entry_count": 988,
-  "last_run_at": "2026-11-18T16:18:53+00:00",
+  "last_run_at": "2026-11-19T16:27:44+00:00",
   "last_status": "ok",
-  "last_success_at": "2026-11-18T16:18:53+00:00",
-  "last_success_date": "2026-11-18",
+  "last_success_at": "2026-11-19T16:27:44+00:00",
+  "last_success_date": "2026-11-19",
   "last_summary": {
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "first_run": false,
     "models": 66,
-    "new_model": 2,
+    "new_model": 0,
     "price_change": 0,
     "removed": 0,
     "skipped_no_price": 2
@@ -40,14 +40,6 @@
   "missing_watchlist": [],
   "price_pending": [],
   "runs": [
-    {
-      "at": "2026-10-09T18:54:12+00:00",
-      "date": "2026-07-24",
-      "events": 1,
-      "models": 41,
-      "source": "backfill",
-      "status": "ok"
-    },
     {
       "at": "2026-10-09T18:54:12+00:00",
       "date": "2026-07-25",
@@ -996,6 +988,14 @@
       "at": "2026-11-18T16:18:53+00:00",
       "date": "2026-11-18",
       "events": 2,
+      "models": 66,
+      "source": "scheduled",
+      "status": "ok"
+    },
+    {
+      "at": "2026-11-19T16:27:44+00:00",
+      "date": "2026-11-19",
+      "events": 0,
       "models": 66,
       "source": "scheduled",
       "status": "ok"
