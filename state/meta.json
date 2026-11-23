@@ -1,17 +1,17 @@
 {
   "aws_check": {
-    "checked_at": "2026-11-22T15:09:49+00:00",
+    "checked_at": "2026-11-23T19:06:41+00:00",
     "conflicts": 0,
     "error": null,
     "litellm_only": 17,
     "mismatch": 0,
     "published": {
-      "us-east-1 AmazonBedrock": "2026-11-11T01:30:37Z",
-      "us-east-1 AmazonBedrockFoundationModels": "2026-11-20T08:34:14Z",
-      "us-east-2 AmazonBedrock": "2026-11-11T01:30:37Z",
-      "us-east-2 AmazonBedrockFoundationModels": "2026-11-20T08:34:14Z",
-      "us-west-2 AmazonBedrock": "2026-11-11T01:30:37Z",
-      "us-west-2 AmazonBedrockFoundationModels": "2026-11-20T08:34:14Z"
+      "us-east-1 AmazonBedrock": "2026-11-23T16:43:56Z",
+      "us-east-1 AmazonBedrockFoundationModels": "2026-11-23T09:58:41Z",
+      "us-east-2 AmazonBedrock": "2026-11-23T16:43:56Z",
+      "us-east-2 AmazonBedrockFoundationModels": "2026-11-23T09:58:41Z",
+      "us-west-2 AmazonBedrock": "2026-11-23T16:43:56Z",
+      "us-west-2 AmazonBedrockFoundationModels": "2026-11-23T09:58:41Z"
     },
     "regions": [
       "us-east-1",
@@ -24,12 +24,12 @@
   "aws_mismatches": {},
   "first_run_date": "2026-07-11",
   "last_bedrock_entry_count": 988,
-  "last_run_at": "2026-11-22T15:09:49+00:00",
+  "last_run_at": "2026-11-23T19:06:41+00:00",
   "last_status": "ok",
-  "last_success_at": "2026-11-22T15:09:49+00:00",
-  "last_success_date": "2026-11-22",
+  "last_success_at": "2026-11-23T19:06:41+00:00",
+  "last_success_date": "2026-11-23",
   "last_summary": {
-    "date": "2026-11-22",
+    "date": "2026-11-23",
     "first_run": false,
     "models": 66,
     "new_model": 0,
@@ -40,14 +40,6 @@
   "missing_watchlist": [],
   "price_pending": [],
   "runs": [
-    {
-      "at": "2026-10-09T18:54:12+00:00",
-      "date": "2026-07-28",
-      "events": 0,
-      "models": 41,
-      "source": "backfill",
-      "status": "ok"
-    },
     {
       "at": "2026-10-09T18:54:13+00:00",
       "date": "2026-07-29",
@@ -995,6 +987,14 @@
     {
       "at": "2026-11-22T15:09:49+00:00",
       "date": "2026-11-22",
+      "events": 0,
+      "models": 66,
+      "source": "scheduled",
+      "status": "ok"
+    },
+    {
+      "at": "2026-11-23T19:06:41+00:00",
+      "date": "2026-11-23",
       "events": 0,
       "models": 66,
       "source": "scheduled",
